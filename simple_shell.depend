@@ -1,0 +1,106 @@
+# depslib dependency file v1.0
+1700052548 source:/home/adecoder/Desktop/alx/simple_shell/aux_error1.c
+	"main.h"
+
+1700052819 /home/adecoder/Desktop/alx/simple_shell/main.h
+	<stdio.h>
+	<unistd.h>
+	<stdlib.h>
+	<sys/types.h>
+	<sys/wait.h>
+	<sys/stat.h>
+	<errno.h>
+	<fcntl.h>
+	<signal.h>
+	<limits.h>
+
+1699812576 source:/home/adecoder/Desktop/alx/simple_shell/aux_error2.c
+	"main.h"
+
+1699988509 source:/home/adecoder/Desktop/alx/simple_shell/aux_help.c
+	"main.h"
+
+1699988665 source:/home/adecoder/Desktop/alx/simple_shell/aux_help2.c
+	"main.h"
+
+1699988975 source:/home/adecoder/Desktop/alx/simple_shell/aux_mem.c
+	"main.h"
+
+1700035349 source:/home/adecoder/Desktop/alx/simple_shell/aux_lists.c
+	"main.h"
+
+1699791613 source:/home/adecoder/Desktop/alx/simple_shell/aux_str.c
+	"main.h"
+
+1700034284 source:/home/adecoder/Desktop/alx/simple_shell/aux_str2.c
+	"main.h"
+
+1699792937 source:/home/adecoder/Desktop/alx/simple_shell/aux_str3.c
+	"main.h"
+
+1700037221 source:/home/adecoder/Desktop/alx/simple_shell/aux_lists2.c
+	"main.h"
+
+1699773193 source:/home/adecoder/Desktop/alx/simple_shell/aux_stdlib.c
+	"main.h"
+
+1699811715 source:/home/adecoder/Desktop/alx/simple_shell/cd_shell.c
+	"main.h"
+
+1699794009 source:/home/adecoder/Desktop/alx/simple_shell/env1.c
+	"main.h"
+
+1699811558 source:/home/adecoder/Desktop/alx/simple_shell/cd.c
+	"main.h"
+
+1700034672 source:/home/adecoder/Desktop/alx/simple_shell/check_syntax_error.c
+	"main.h"
+
+1700036844 source:/home/adecoder/Desktop/alx/simple_shell/cmd_exec.c
+	"main.h"
+
+1699811595 source:/home/adecoder/Desktop/alx/simple_shell/env2.c
+	"main.h"
+
+1700036621 source:/home/adecoder/Desktop/alx/simple_shell/exec_line.c
+	"main.h"
+
+1699811071 source:/home/adecoder/Desktop/alx/simple_shell/exit_shell.c
+	"main.h"
+
+1699791541 source:/home/adecoder/Desktop/alx/simple_shell/getErrorMessage.c
+	"main.h"
+
+1699791541 source:/home/adecoder/Desktop/alx/simple_shell/getHelp.c
+	"main.h"
+
+1699989575 source:/home/adecoder/Desktop/alx/simple_shell/get_sigint.c
+	"main.h"
+
+1700036928 source:/home/adecoder/Desktop/alx/simple_shell/read_line.c
+	"main.h"
+
+1699988942 source:/home/adecoder/Desktop/alx/simple_shell/get_line.c
+	"main.h"
+
+1700036140 source:/home/adecoder/Desktop/alx/simple_shell/get_builtin.c
+	"main.h"
+
+1700037512 source:/home/adecoder/Desktop/alx/simple_shell/shell_loop.c
+	"main.h"
+
+1700036681 source:/home/adecoder/Desktop/alx/simple_shell/main.c
+	"main.h"
+
+1700037447 source:/home/adecoder/Desktop/alx/simple_shell/rep_var.c
+	"main.h"
+
+1700037665 source:/home/adecoder/Desktop/alx/simple_shell/split.c
+	"main.h"
+
+1699812549 source:/home/adecoder/Desktop/alx/simple_shell/get_error.c
+	"main.h"
+
+1699988048 source:/home/adecoder/Desktop/alx/simple_shell/get_help.c
+	"main.h"
+
