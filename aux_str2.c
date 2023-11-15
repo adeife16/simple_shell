@@ -5,7 +5,7 @@
  * @s: Type char pointer representing the string.
  * Return: Duplicated string.
  */
-char *_stringDuplicate( char *s)
+char *_stringDuplicate(char *s)
 {
 	char *new;
 	size_t len;

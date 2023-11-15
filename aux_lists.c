@@ -13,7 +13,7 @@ list_sep *addSeparatorNodeEnd(list_sep **head, char sep)
 
     newNode = malloc(sizeof(list_sep));
     if (newNode == NULL)
-        return (NULL);
+      return (NULL);
 
     newNode->separator = sep;
     newNode->next = NULL;
@@ -21,13 +21,13 @@ list_sep *addSeparatorNodeEnd(list_sep **head, char sep)
 
     if (tempNode == NULL)
     {
-        *head = newNode;
+      *head = newNode;
     }
     else
     {
-        while (tempNode->next != NULL)
-            tempNode = tempNode->next;
-        tempNode->next = newNode;
+      while (tempNode->next != NULL)
+	tempNode = tempNode->next;
+      tempNode->next = newNode;
     }
 
     return (*head);
@@ -45,13 +45,13 @@ void freeSeparatorList(list_sep **head)
 
     if (head != NULL)
     {
-        currentNode = *head;
-        while ((tempNode = currentNode) != NULL)
-        {
-            currentNode = currentNode->next;
-            free(tempNode);
-        }
-        *head = NULL;
+      currentNode = *head;
+      while ((tempNode = currentNode) != NULL)
+      {
+	currentNode = currentNode->next;
+	free(tempNode);
+      }
+      *head = NULL;
     }
 }
 
@@ -68,7 +68,7 @@ list_line *addCommandLineNodeEnd(list_line **head, char *line)
 
     newNode = malloc(sizeof(list_line));
     if (newNode == NULL)
-        return (NULL);
+      return (NULL);
 
     newNode->line = line;
     newNode->next = NULL;
@@ -76,13 +76,13 @@ list_line *addCommandLineNodeEnd(list_line **head, char *line)
 
     if (tempNode == NULL)
     {
-        *head = newNode;
+      *head = newNode;
     }
     else
     {
-        while (tempNode->next != NULL)
-            tempNode = tempNode->next;
-        tempNode->next = newNode;
+      while (tempNode->next != NULL)
+	tempNode = tempNode->next;
+      tempNode->next = newNode;
     }
 
     return (*head);
@@ -100,12 +100,12 @@ void freeLineList(list_line **head)
 
     if (head != NULL)
     {
-        currentNode = *head;
-        while ((tempNode = currentNode) != NULL)
-        {
-            currentNode = currentNode->next;
-            free(tempNode);
-        }
-        *head = NULL;
+      currentNode = *head;
+      while ((tempNode = currentNode) != NULL)
+      {
+	currentNode = currentNode->next;
+	free(tempNode);
+      }
+      *head = NULL;
     }
 }

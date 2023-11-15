@@ -7,8 +7,8 @@
  */
 void handleSIGINT(int signal)
 {
-    (void)signal;  // Unused parameter warning.
+  (void)signal;  /* Unused parameter warning.*/
 
-    // Write a message to the standard output.
+  /* Write a message to the standard output.*/
     write(STDOUT_FILENO, "\n^-^ ", 5);
 }

@@ -8,18 +8,18 @@
  */
 int is_colon_directory(char *path, int *index)
 {
-	if (path[*index] == ':')
-		return 1;
+  if (path[*index] == ':')
+    return (1);
 
-	while (path[*index] != ':' && path[*index])
-	{
-		*index += 1;
-	}
+  while (path[*index] != ':' && path[*index])
+  {
+    *index += 1;
+  }
 
-	if (path[*index])
-		*index += 1;
+  if (path[*index])
+    *index += 1;
 
-	return 0;
+  return (0);
 }
 
 /**
@@ -31,48 +31,48 @@ int is_colon_directory(char *path, int *index)
  */
 char *find_executable_path(char *cmd, char **_environ)
 {
-	char *path, *path_copy, *token_path, *dir;
-	int len_dir, len_cmd, i;
-	struct stat st;
+  char *path, *path_copy, *token_path, *dir;
+  int len_dir, len_cmd, i;
+  struct stat st;
 
-	path = _getEnvironmentVariable("PATH", _environ);
-	if (path)
-	{
-		path_copy = _stringDuplicate(path);
-		len_cmd = _stringLength(cmd);
-		token_path = _stringTokenize(path_copy, ":");
-		i = 0;
-		while (token_path != NULL)
-		{
-			if (is_colon_directory(path, &i))
-				if (stat(cmd, &st) == 0)
-					return cmd;
+  path = _getEnvironmentVariable("PATH", _environ);
+  if (path)
+  {
+    path_copy = _stringDuplicate(path);
+    len_cmd = _stringLength(cmd);
+    token_path = _stringTokenize(path_copy, ":");
+    i = 0;
+    while (token_path != NULL)
+    {
+      if (is_colon_directory(path, &i))
+	if (stat(cmd, &st) == 0)
+	  return (cmd);
 
-			len_dir = _stringLength(token_path);
-			dir = malloc(len_dir + len_cmd + 2);
-			_stringCopy(dir, token_path);
-			_stringConcatenate(dir, "/");
-			_stringConcatenate(dir, cmd);
-			_stringConcatenate(dir, "\0");
-			if (stat(dir, &st) == 0)
-			{
-				free(path_copy);
-				return dir;
-			}
-			free(dir);
-			token_path = _stringTokenize(NULL, ":");
-		}
-		free(path_copy);
-		if (stat(cmd, &st) == 0)
-			return cmd;
-		return NULL;
-	}
+      len_dir = _stringLength(token_path);
+      dir = malloc(len_dir + len_cmd + 2);
+      _stringCopy(dir, token_path);
+      _stringConcatenate(dir, "/");
+      _stringConcatenate(dir, cmd);
+      _stringConcatenate(dir, "\0");
+      if (stat(dir, &st) == 0)
+      {
+	free(path_copy);
+	return (dir);
+      }
+      free(dir);
+      token_path = _stringTokenize(NULL, ":");
+    }
+    free(path_copy);
+    if (stat(cmd, &st) == 0)
+      return (cmd);
+    return (NULL);
+  }
 
 	if (cmd[0] == '/')
 		if (stat(cmd, &st) == 0)
-			return cmd;
+		  return (cmd);
 
-	return NULL;
+	return (NULL);
 }
 
 /**
@@ -93,7 +93,7 @@ int is_path_executable(ShellData *datash)
 		if (input[i] == '.')
 		{
 			if (input[i + 1] == '.')
-				return 0;
+			  return (0);
 			if (input[i + 1] == '/')
 				continue;
 			else
@@ -110,15 +110,15 @@ int is_path_executable(ShellData *datash)
 			break;
 	}
 	if (i == 0)
-		return 0;
+	  return (0);
 
 	if (stat(input + i, &st) == 0)
 	{
-		return i;
+	  return (i);
 	}
 
 	getErrorMessage(datash, 127);
-	return -1;
+	return (-1);
 }
 
 /**
@@ -133,7 +133,7 @@ int check_command_error(char *dir, ShellData *datash)
 	if (dir == NULL)
 	{
 		getErrorMessage(datash, 127);
-		return 1;
+		return (1);
 	}
 
 	if (_stringCompare(datash->arguments[0], dir) != 0)
@@ -142,7 +142,7 @@ int check_command_error(char *dir, ShellData *datash)
 		{
 			getErrorMessage(datash, 126);
 			free(dir);
-			return 1;
+			return (1);
 		}
 		free(dir);
 	}
@@ -151,11 +151,11 @@ int check_command_error(char *dir, ShellData *datash)
 		if (access(datash->arguments[0], X_OK) == -1)
 		{
 			getErrorMessage(datash, 126);
-			return 1;
+			return (1);
 		}
 	}
 
-	return 0;
+	return (0);
 }
 
 /**
@@ -175,13 +175,13 @@ int executeCommand(ShellData *datash)
 
 	executable_index = is_path_executable(datash);
 	if (executable_index == -1)
-		return 1;
+	  return (1);
 
 	if (executable_index == 0)
 	{
 		dir = find_executable_path(datash->arguments[0], datash->environmentVariables);
 		if (check_command_error(dir, datash) == 1)
-			return 1;
+		  return (1);
 	}
 
 	process_id = fork();
@@ -197,7 +197,7 @@ int executeCommand(ShellData *datash)
 	else if (process_id < 0)
 	{
 		perror(datash->arguments[0]);
-		return 1;
+		return (1);
 	}
 	else
 	{
@@ -207,5 +207,5 @@ int executeCommand(ShellData *datash)
 	}
 
 	datash->status = process_state / 256;
-	return 1;
+	return (1);
 }

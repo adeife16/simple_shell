@@ -39,5 +39,5 @@ int getErrorMessage(ShellData *datash, int error_code)
 	}
 
 	datash->status = error_code;
-	return error_code;
+	return (error_code);
 }

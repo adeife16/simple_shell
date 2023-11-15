@@ -15,7 +15,7 @@ void _memoryCopy(void *newPtr, const void *ptr, unsigned int size)
     unsigned int i;
 
     for (i = 0; i < size; i++)
-        charNewPtr[i] = charPtr[i];
+      charNewPtr[i] = charPtr[i];
 }
 
 /**
@@ -33,25 +33,25 @@ void *_reallocate(void *ptr, unsigned int oldSize, unsigned int newSize)
     void *newPtr;
 
     if (ptr == NULL)
-        return (malloc(newSize));
+      return (malloc(newSize));
 
     if (newSize == 0)
     {
-        free(ptr);
-        return (NULL);
+      free(ptr);
+      return (NULL);
     }
 
     if (newSize == oldSize)
-        return (ptr);
+      return (ptr);
 
     newPtr = malloc(newSize);
     if (newPtr == NULL)
-        return (NULL);
+      return (NULL);
 
     if (newSize < oldSize)
-        _memoryCopy(newPtr, ptr, newSize);
+      _memoryCopy(newPtr, ptr, newSize);
     else
-        _memoryCopy(newPtr, ptr, oldSize);
+      _memoryCopy(newPtr, ptr, oldSize);
 
     free(ptr);
     return (newPtr);
@@ -73,17 +73,17 @@ char **_reallocateDoublePointer(char **ptr, unsigned int oldSize, unsigned int n
     unsigned int i;
 
     if (ptr == NULL)
-        return (malloc(sizeof(char *) * newSize));
+      return (malloc(sizeof(char *) * newSize));
 
     if (newSize == oldSize)
-        return (ptr);
+      return (ptr);
 
     newPtr = malloc(sizeof(char *) * newSize);
     if (newPtr == NULL)
-        return (NULL);
+      return (NULL);
 
     for (i = 0; i < oldSize; i++)
-        newPtr[i] = ptr[i];
+      newPtr[i] = ptr[i];
 
     free(ptr);
 

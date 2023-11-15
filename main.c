@@ -12,7 +12,7 @@ void free_shell_data(ShellData *datash)
 
     for (i = 0; datash->environmentVariables[i]; i++)
     {
-        free(datash->environmentVariables[i]);
+      free(datash->environmentVariables[i]);
     }
 
     free(datash->environmentVariables);
@@ -38,13 +38,13 @@ void initialize_shell_data(ShellData *datash, char **av)
     datash->lineCounter = 1;
 
     for (i = 0; environ[i]; i++)
-        ;
+      ;
 
     datash->environmentVariables = malloc(sizeof(char *) * (i + 1));
 
     for (i = 0; environ[i]; i++)
     {
-        datash->environmentVariables[i] = _stringDuplicate(environ[i]);
+      datash->environmentVariables[i] = _stringDuplicate(environ[i]);
     }
 
     datash->environmentVariables[i] = NULL;
@@ -69,6 +69,6 @@ int main(int ac, char **av)
     shellLoop(&datash);
     free_shell_data(&datash);
     if (datash.status < 0)
-        return 255;
-    return datash.status;
+      return (255);
+    return (datash.status);
 }

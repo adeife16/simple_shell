@@ -19,9 +19,9 @@ char *errorEnvironment(ShellData *datash)
     errorMessage = malloc(sizeof(char) * (length + 1));
     if (errorMessage == 0)
     {
-        free(errorMessage);
-        free(lineCounter);
-        return NULL;
+      free(errorMessage);
+      free(lineCounter);
+      return (NULL);
     }
 
     _stringCopy(errorMessage, datash->arguments[0]);
@@ -33,7 +33,7 @@ char *errorEnvironment(ShellData *datash)
     _stringConcatenate(errorMessage, "\0");
     free(lineCounter);
 
-    return errorMessage;
+    return (errorMessage);
 }
 
 /**
@@ -54,9 +54,9 @@ char *errorPath126(ShellData *datash)
     errorMessage = malloc(sizeof(char) * (length + 1));
     if (errorMessage == 0)
     {
-        free(errorMessage);
-        free(lineCounter);
-        return NULL;
+      free(errorMessage);
+      free(lineCounter);
+      return (NULL);
     }
     _stringCopy(errorMessage, datash->arguments[0]);
     _stringConcatenate(errorMessage, ": ");
@@ -66,5 +66,5 @@ char *errorPath126(ShellData *datash)
     _stringConcatenate(errorMessage, ": Permission denied\n");
     _stringConcatenate(errorMessage, "\0");
     free(lineCounter);
-    return errorMessage;
+    return (errorMessage);
 }

@@ -66,14 +66,14 @@ int checkVariables(var_r **head, char *input, char *status, ShellData *data)
 			else if (input[i + 1] == '$')
 				addRVarNode(head, 2, data->processID, pid_length), i++;
 			else if (input[i + 1] == '\n' || input[i + 1] == '\0' || input[i + 1] == ' ' ||
-			         input[i + 1] == '\t' || input[i + 1] == ';')
+				 input[i + 1] == '\t' || input[i + 1] == ';')
 				addRVarNode(head, 0, NULL, 0);
 			else
 				checkEnvironmentVariables(head, input + i, data);
 		}
 	}
 
-	return i;
+	return (i);
 }
 
 /**
@@ -125,7 +125,7 @@ char *replaceInput(var_r **head, char *input, char *new_input, int new_length)
 		}
 	}
 
-	return new_input;
+	return (new_input);
 }
 
 /**
@@ -149,7 +149,7 @@ char *replaceVariables(char *input, ShellData *datash)
 	if (head == NULL)
 	{
 		free(status);
-		return input;
+		return (input);
 	}
 
 	index = head;
@@ -172,5 +172,5 @@ char *replaceVariables(char *input, ShellData *datash)
 	free(status);
 	freeRVarList(&head);
 
-	return new_input;
+	return (new_input);
 }

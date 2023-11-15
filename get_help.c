@@ -15,7 +15,7 @@ int getHelp(ShellData *datash)
 	else if (_stringCompare(datash->arguments[1], "env") == 0)
 		showEnvironmentHelp();
 	else if (_stringCompare(datash->arguments[1], "unsetenv") == 0)
-		showUnsetenvHelp    ();
+		showUnsetenvHelp();
 	else if (_stringCompare(datash->arguments[1], "help") == 0)
 		showHelp();
 	else if (_stringCompare(datash->arguments[1], "exit") == 0)

@@ -18,7 +18,7 @@ char *removeComment(char *input)
 			if (i == 0)
 			{
 				free(input);
-				return NULL;
+				return (NULL);
 			}
 
 			if (input[i - 1] == ' ' || input[i - 1] == '\t' || input[i - 1] == ';')
@@ -32,7 +32,7 @@ char *removeComment(char *input)
 		input[up_to] = '\0';
 	}
 
-	return input;
+	return (input);
 }
 
 /**

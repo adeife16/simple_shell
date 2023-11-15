@@ -16,11 +16,11 @@ int compare_env_variable_name(const char *env_var, const char *name)
 	{
 		if (env_var[i] != name[i])
 		{
-			return 0;
+		  return (0);
 		}
 	}
 
-	return i + 1;
+	return (i + 1);
 }
 
 /**
@@ -49,7 +49,7 @@ char *_getEnvironmentVariable(char *name, char **_environ)
 		}
 	}
 
-	return env_var_ptr + move;
+	return (env_var_ptr + move);
 }
 
 /**
@@ -73,5 +73,5 @@ int handleEnvironmentCommand(ShellData *datash)
 
 	datash->status = 0;
 
-	return 1;
+	return (1);
 }

@@ -15,7 +15,7 @@ var_r *addRVarNode(var_r **head, int lenVar, char *val, int lenVal)
 
     newNode = malloc(sizeof(var_r));
     if (newNode == NULL)
-        return (NULL);
+      return (NULL);
 
     newNode->var_len = lenVar;
     newNode->value = val;
@@ -26,13 +26,13 @@ var_r *addRVarNode(var_r **head, int lenVar, char *val, int lenVal)
 
     if (tempNode == NULL)
     {
-        *head = newNode;
+      *head = newNode;
     }
     else
     {
-        while (tempNode->next != NULL)
-            tempNode = tempNode->next;
-        tempNode->next = newNode;
+      while (tempNode->next != NULL)
+	tempNode = tempNode->next;
+      tempNode->next = newNode;
     }
 
     return (*head);
@@ -50,12 +50,12 @@ void freeRVarList(var_r **head)
 
     if (head != NULL)
     {
-        currentNode = *head;
-        while ((tempNode = currentNode) != NULL)
-        {
-            currentNode = currentNode->next;
-            free(tempNode);
-        }
-        *head = NULL;
+      currentNode = *head;
+      while ((tempNode = currentNode) != NULL)
+      {
+	currentNode = currentNode->next;
+	free(tempNode);
+      }
+      *head = NULL;
     }
 }

@@ -19,7 +19,8 @@
 
 extern char **environ;
 
-typedef struct ShellData {
+typedef struct ShellData
+{
     char **arguments;
     char *input;
     char **tokens;
@@ -29,24 +30,28 @@ typedef struct ShellData {
     char *processID;
 } ShellData;
 
-typedef struct list_sep {
+typedef struct list_sep
+{
     char separator;
     struct list_sep *next;
 } list_sep;
 
-typedef struct list_line {
+typedef struct list_line
+{
     char *line;
     struct list_line *next;
 } list_line;
 
-typedef struct var_r {
+typedef struct var_r
+{
     int var_len;
     char *value;
     int val_len;
     struct var_r *next;
 } var_r;
 
-typedef struct BuiltinCommand {
+typedef struct BuiltinCommand
+{
     char *name;
     int (*function)(ShellData *data);
 } BuiltinCommand;

@@ -40,7 +40,7 @@ char *swapCharacters(char *input, int replace)
 			input[i] = (input[i] == 12 ? '&' : input[i]);
 		}
 	}
-	return input;
+	return (input);
 }
 
 /**
@@ -71,8 +71,7 @@ void addNodes(list_sep **separator_list, list_line **list_line, char *input)
 	}
 
 	line = _stringTokenize(input, ";|&");
-	do
-	{
+	do {
 		line = swapCharacters(line, 1);
 		addCommandLineNodeEnd(list_line, line);
 		line = _stringTokenize(NULL, ";|&");
@@ -164,8 +163,8 @@ int splitCommands(ShellData *datash, char *input)
 	freeSeparatorList(&line_head);
 
 	if (loop == 0)
-		return 0;
-	return 1;
+	  return (0);
+	return (1);
 }
 
 /**
@@ -208,5 +207,5 @@ char **splitCommandLine(char *input)
 		tokens[i] = token;
 	}
 
-	return tokens;
+	return (tokens);
 }
