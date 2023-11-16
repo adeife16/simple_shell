@@ -101,7 +101,7 @@ int find_first_char_index(char *input, int *index)
  */
 void print_syntax_error_message(ShellData *datash, char *input, int index, int is_bool)
 {
-    char *error_char, *msg_start, *msg_middle, *msg_end, *error_message, *counter;
+    char *error_char, *msg_start, *msg_middle, *error_message, *counter;
     int message_length;
 
     if (input[index] == ';')

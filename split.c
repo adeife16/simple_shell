@@ -160,7 +160,7 @@ int splitCommands(ShellData *datash, char *input)
 	}
 
 	freeSeparatorList(&separator_head);
-	freeSeparatorList(&line_head);
+	freeSeparatorList(&separator_head);
 
 	if (loop == 0)
 	  return (0);
